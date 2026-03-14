@@ -1,0 +1,156 @@
+.trade-tape {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.trade-tape-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+.trade-count {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.trade-tape-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.7fr 1fr;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) 0;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.trade-list {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.trade-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.7fr 1fr;
+    gap: var(--spacing-sm);
+    padding: 6px 4px;
+    font-size: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    transition: background 0.15s ease;
+}
+
+.trade-row:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.trade-buy {
+    border-left: 2px solid var(--color-bid);
+}
+
+.trade-sell {
+    border-left: 2px solid var(--color-ask);
+}
+
+.trade-time {
+    color: var(--text-muted);
+}
+
+.trade-price {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.trade-qty {
+    color: var(--text-secondary);
+}
+
+.trade-side {
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.side-buy {
+    color: var(--color-bid);
+}
+
+.side-sell {
+    color: var(--color-ask);
+}
+
+.no-trades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+    color: var(--text-muted);
+}
+
+.no-trades-hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    opacity: 0.6;
+    margin-top: var(--spacing-xs);
+}
+
+/* Educational Tooltip */
+.trade-tape-tooltip {
+    position: relative;
+    margin-top: auto;
+    padding: var(--spacing-sm);
+}
+
+.trade-tape-tooltip .tooltip-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    cursor: help;
+}
+
+.trade-tape-tooltip .tooltip-content {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    z-index: 100;
+    box-shadow: var(--shadow-lg);
+}
+
+.trade-tape-tooltip .tooltip-content strong {
+    color: var(--text-primary);
+    font-size: 0.875rem;
+}
+
+.trade-tape-tooltip .tooltip-content p,
+.trade-tape-tooltip .tooltip-content ul {
+    margin: var(--spacing-xs) 0;
+}
+
+.trade-tape-tooltip .tooltip-content ul {
+    padding-left: var(--spacing-md);
+}
+
+.trade-tape-tooltip:hover .tooltip-content {
+    display: block;
+    animation: slideIn 0.2s ease-out;
+}

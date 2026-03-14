@@ -1,0 +1,84 @@
+.simulation-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--gradient-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.status-dot.running {
+    background: var(--color-bid);
+    box-shadow: 0 0 10px var(--color-bid);
+}
+
+.status-dot.stopped {
+    background: var(--color-ask);
+    box-shadow: 0 0 10px var(--color-ask);
+    animation: none;
+}
+
+.status-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.control-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.start-btn {
+    background: var(--gradient-bid);
+}
+
+.stop-btn {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--color-ask);
+    border: 1px solid var(--color-ask);
+}
+
+.stop-btn:hover {
+    background: rgba(239, 68, 68, 0.3);
+}
+
+.status-metrics {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-left: auto;
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.metric-label {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.metric-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}

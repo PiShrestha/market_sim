@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: market-simulation
+
+# CORS configuration for frontend
+cors:
+  allowed-origins: http://localhost:5173,http://localhost:3000
+
+# Simulation defaults
+simulation:
+  tick-interval-ms: 100
+  initial-price: 100.00
+  market-maker:
+    enabled: true
+    risk-aversion: 0.1
+    target-spread: 0.10

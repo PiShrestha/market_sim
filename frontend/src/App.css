@@ -1,0 +1,155 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-lg);
+  gap: var(--spacing-lg);
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.logo-icon {
+  font-size: 2rem;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.tagline {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Controls Section */
+.controls-section {
+  display: flex;
+  justify-content: center;
+}
+
+/* Dashboard Grid */
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: var(--spacing-lg);
+  flex: 1;
+}
+
+.center-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.panel {
+  background: var(--gradient-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.panel-orderbook,
+.panel-form {
+  min-height: 500px;
+}
+
+.panel-chart {
+  flex: 1;
+  min-height: 280px;
+}
+
+.panel-trades {
+  flex: 1;
+  min-height: 250px;
+}
+
+/* Footer */
+.app-footer {
+  margin-top: auto;
+  padding-top: var(--spacing-lg);
+}
+
+.concepts-bar {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background: var(--gradient-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+}
+
+.concept {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.concept-icon {
+  font-size: 1.5rem;
+}
+
+.concept-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.concept-text strong {
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+
+.concept-text span {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .dashboard {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .panel-form {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-orderbook,
+  .panel-form {
+    min-height: 400px;
+  }
+
+  .concepts-bar {
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+
+  .concept {
+    flex: 1;
+    min-width: 140px;
+  }
+}

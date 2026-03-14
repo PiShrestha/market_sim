@@ -1,0 +1,111 @@
+.price-chart {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.price-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.current-price-display {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-sm);
+}
+
+.current-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.price-change {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.price-change.up {
+    color: var(--color-bid);
+}
+
+.price-change.down {
+    color: var(--color-ask);
+}
+
+.chart-body {
+    flex: 1;
+    min-height: 200px;
+}
+
+.chart-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: var(--text-muted);
+}
+
+.chart-hint {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin-top: var(--spacing-xs);
+}
+
+/* Educational Tooltip */
+.chart-tooltip {
+    position: relative;
+    padding: var(--spacing-sm);
+}
+
+.chart-tooltip .tooltip-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    cursor: help;
+}
+
+.chart-tooltip .tooltip-content {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    z-index: 100;
+    box-shadow: var(--shadow-lg);
+}
+
+.chart-tooltip .tooltip-content strong {
+    color: var(--text-primary);
+    font-size: 0.875rem;
+}
+
+.chart-tooltip .tooltip-content p,
+.chart-tooltip .tooltip-content ul {
+    margin: var(--spacing-xs) 0;
+}
+
+.chart-tooltip .tooltip-content ul {
+    padding-left: var(--spacing-md);
+}
+
+.chart-tooltip:hover .tooltip-content {
+    display: block;
+    animation: slideIn 0.2s ease-out;
+}

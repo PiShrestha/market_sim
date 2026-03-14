@@ -1,0 +1,219 @@
+.order-book {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-book-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    color: var(--text-muted);
+}
+
+.order-book-spread {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.spread-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.spread-value {
+    font-size: 0.875rem;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.order-book-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) 0;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.order-book-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    flex: 1;
+    padding-top: var(--spacing-sm);
+}
+
+.order-book-side {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.order-book-bids {
+    align-items: flex-end;
+}
+
+.order-book-asks {
+    align-items: flex-start;
+}
+
+.order-book-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.bid-row {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.bid-row .qty {
+    margin-right: auto;
+    color: var(--color-bid);
+}
+
+.bid-row .price {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.ask-row {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.ask-row .qty {
+    margin-left: auto;
+    color: var(--color-ask);
+}
+
+.ask-row .price {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.depth-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    opacity: 0.3;
+    transition: width 0.3s ease-out;
+}
+
+.bid-bar {
+    right: 0;
+    background: var(--gradient-bid);
+    border-radius: 0 4px 4px 0;
+}
+
+.ask-bar {
+    left: 0;
+    background: var(--gradient-ask);
+    border-radius: 4px 0 0 4px;
+}
+
+.qty,
+.price {
+    position: relative;
+    z-index: 1;
+    font-size: 0.8rem;
+}
+
+.order-book-row:hover .depth-bar {
+    opacity: 0.5;
+}
+
+.mid-price-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-md);
+}
+
+.mid-price-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.mid-price-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* Educational Tooltip */
+.order-book-tooltip {
+    position: relative;
+    margin-top: auto;
+    padding: var(--spacing-sm);
+}
+
+.tooltip-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    cursor: help;
+}
+
+.tooltip-content {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    z-index: 100;
+    box-shadow: var(--shadow-lg);
+}
+
+.tooltip-content strong {
+    color: var(--text-primary);
+    font-size: 0.875rem;
+}
+
+.tooltip-content p {
+    margin: var(--spacing-xs) 0;
+}
+
+.tooltip-content ul {
+    margin: var(--spacing-sm) 0;
+    padding-left: var(--spacing-md);
+}
+
+.tooltip-content li {
+    margin: var(--spacing-xs) 0;
+}
+
+.order-book-tooltip:hover .tooltip-content {
+    display: block;
+    animation: slideIn 0.2s ease-out;
+}
